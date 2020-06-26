@@ -14,7 +14,7 @@ service:
   protocol: TCP
 
 gateway:
-  name: springbootapp-gateway
+  name: springbootapp-gw
   portNumber: 80
   portName: http
   protocol: HTTP

@@ -6,7 +6,7 @@ spec:
   hosts:
     - '*'
   gateways:
-    - springbootapp-gateway
+    - springbootapp-gw
   http:
     - route:
       - destination:
