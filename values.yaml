@@ -1,0 +1,24 @@
+replicaCount: 1
+
+image:
+  repository: 90398133/springbootapp
+  pullPolicy: IfNotPresent
+  tag: "latest"
+
+containerPort: 8085
+
+service:
+  type: ClusterIP
+  port: 80
+  targetPort: 8085
+  protocol: TCP
+
+gateway:
+  name: springbootapp-gateway
+  portNumber: 80
+  portName: http
+  protocol: HTTP
+
+virtualService:
+  host: springbootapp.default.svc.cluster.local
+  portNumber: 80

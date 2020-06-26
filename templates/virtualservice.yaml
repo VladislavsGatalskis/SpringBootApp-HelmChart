@@ -1,0 +1,15 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: springbootapp-vs
+spec:
+  hosts:
+    - '*'
+  gateways:
+    - springbootapp-gateway
+  http:
+    - route:
+      - destination:
+          host: {{ .Values.virtualService.host }}
+          port:
+            number: {{ .Values.virtualService.portNumber }}
